@@ -1,0 +1,18 @@
+body {
+    background: url(../../assets/img/burgerplace.jpg);
+    background-position: 50%, 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#mainContainer {
+    background: url(../../assets/img/wood.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.jumbotron {
+    background-color: #4C4C4E;
+}

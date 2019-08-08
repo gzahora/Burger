@@ -1,0 +1,70 @@
+<div class="container text-center">
+    <div class="jumbotron py-1 text-white">
+        <h1 class="display-4">Eat-Da-Burger!</h1>
+        <p class="lead">Welcome to Eat-Da-Burger restaurant!</p>
+        <hr class="my-4">
+        <p>You can either devour a burger (if available) or grill another burger (if sold out).</p>
+    </div>
+</div>
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col" id="mainContainer">
+            <h1><u>Available Burgers</u></h1>
+            <br>
+                {{#each burgers}}
+                    {{#unless devoured}}
+                        {{> burgers/burger-block devoured=false}}
+                    {{/unless}}
+                {{/each}}
+        </div>
+        <div class="col-2"></div>
+        <div class="col" id="mainContainer">
+            <h1><u>Sold Out Burgers</u></h1>
+            <br>
+                {{#each burgers}}
+                    {{#if devoured}}
+                        {{> burgers/burger-block devoured=true}}
+                    {{/if}}
+                {{/each}}
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="row">
+        <div class="col"></div>
+
+        <div class="col text-center" id="mainContainer">
+            <h1><u>Add Burger</u></h1>
+            <br>
+
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="burger"><strong>Burger Name:</strong></label>
+                    <br>
+                    <input type="text" id="burger" name="name">
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                    <label for="devoured"><strong>What is the burger's status?</strong></label><br>
+                    <input type="radio" name="devoured" value="1" checked><strong>Sold Out</strong><br>
+                    <input type="radio" name="devoured" value="0"><strong>Available</strong>
+                </div>
+
+                <button type="submit" class="btn btn-success">Add Burger</button>
+                <br><br>
+            </form>
+
+        </div>
+
+        <div class="col"></div>
+    </div>
+    <br><br><br>
+
+</div>
+
+
+
